@@ -1,0 +1,33 @@
+import java.util.*;
+public class Project{
+	public static void main(String[] args) {
+		int[] a= {100,200,300,400,500,600};
+		Scanner s=new Scanner(System.in);
+		System.out.println("ID's : 5000,5001,5002,5003,5004,5005");
+		System.out.println("Enter the no of Items[ID] to return:");
+		int n=s.nextInt();
+		double sum=0;
+		double price;
+		System.out.println("Enter the Items's ID and the Count of Item:");
+		for(int i=0;i<n;i++) {
+			int id=s.nextInt();
+			if(id>=5000 && id<=5005) {
+				int id_n=s.nextInt();
+				if(id==5004 || id==5005) {
+					price=(a[id%10]*id_n)*0.8;
+					sum=sum+(price);
+				
+				}
+				else {
+					price=a[id%10]*id_n;
+					sum=sum+(price);
+				}
+				System.out.println("Amount need to return for "+id+" is "+price);
+			}
+			else {
+				System.out.println("ID "+id+" Doesn't exist.");
+			}
+		}
+		System.out.println("Total Amount to return :"+sum);
+	}
+}
