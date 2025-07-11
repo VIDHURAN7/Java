@@ -1,0 +1,23 @@
+public class SimpleRevenueCalculator {
+    public static void main(String[] args) {
+        // Item IDs and their prices
+        int[] itemIDs = {5001, 5002, 5003, 5004, 5005};
+        int[] prices   = {100, 150, 200, 300, 50};
+
+        // Transactions: quantities sold for each item
+        int[] quantities = {3, 2, 4, 1, 5}; // index matches itemIDs
+
+        System.out.println("Item ID\tRevenue (Rs.)");
+
+        for (int i = 0; i < itemIDs.length; i++) {
+            double revenue = prices[i] * quantities[i];
+
+            // Apply 20% discount for items 5004 and 5005
+            if (itemIDs[i] == 5004 || itemIDs[i] == 5005) {
+                revenue = revenue * 0.8;
+            }
+
+            System.out.println(itemIDs[i] + "\t" + revenue);
+        }
+    }
+}
